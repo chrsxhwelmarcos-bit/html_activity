@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RECI</title>
+<style>
+  table {
+    border-collapse: collapse; 
+  }
+  td {
+    border: 5px solid black;
+    width: 90px;
+    height: 90px;
+  }
+</style>
+</head>
+<body>
+<table align="center">
+  <tr>
+    <td colspan="3" bgcolor="red"></td>
+    <td rowspan="2" bgcolor="blue"></td>
+  </tr>
+  <tr>
+    <td rowspan="2" bgcolor="green"></td>
+    <td colspan="2" bgcolor="gray"></td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="yellow"></td>
+  </tr>
+</table>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>RECI2</title>
+<style>
+  body {
+    background-color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    width: 320px;   
+    height: 240px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 4px;
+    padding: 5px;
+    background-color: #dcdcdc;
+    border: 2px solid black;
+    box-shadow:
+      -2px -2px 0 #ffffff,  
+      2px 2px 0 #777777;    
+    border-radius: 7px;
+  }
+
+  .cell {
+    box-sizing: border-box;
+    box-shadow:
+      inset -2px -2px 0 #ffffff,  
+      inset 2px 2px 0 #7a7a7a;    
+  }
+
+  .red { background-color: red; grid-column: 2; grid-row: 1; }
+  .yellow { background-color: yellow; grid-column: 1; grid-row: 2; }
+  .cyan { background-color: cyan; grid-column: 3; grid-row: 1 / span 2; }
+  .blue { background-color: blue; grid-column: 1 / span 2; grid-row: 2; opacity: 0; } 
+  .magenta { background-color: magenta; grid-column: 1 / span 3; grid-row: 3; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="cell" style="background-color: red; grid-column: 2; grid-row: 1;"></div>
+  <div class="cell" style="background-color: yellow; grid-column: 1; grid-row: 1;"></div>
+  <div class="cell" style="background-color: cyan; grid-column: 3; grid-row: 1 / span 2;"></div>
+  <div class="cell" style="background-color: blue; grid-column: 1 / span 2; grid-row: 2;"></div>
+  <div class="cell" style="background-color: magenta; grid-column: 1 / span 3; grid-row: 3;"></div>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RECI3</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 5px;
+      width: 300px;
+      height: 250px;
+      border: 3px solid #aaa;
+      box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+      background-color: white;
+    }
+
+    .item1 { background-color: cyan; grid-row: 1 / 4; grid-column: 1 / 2; }
+    .item2 { background-color: blue; grid-row: 1 / 2; grid-column: 2 / 3; }
+    .item3 { background-color: magenta; grid-row: 1 / 2; grid-column: 3 / 4; }
+    .item4 { background-color: lime; grid-row: 2 / 3; grid-column: 2 / 4; }
+    .item5 { background-color: gray; grid-row: 3 / 4; grid-column: 2 / 3; }
+    .item6 { background-color: yellow; grid-row: 3 / 4; grid-column: 3 / 4; }
+
+    .container div {
+      border: 3px solid white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <div class="item4"></div>
+    <div class="item5"></div>
+    <div class="item6"></div>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>RECI</title>
+<style>
+  .grid {
+    width: 660px;       
+    height: 480px;       
+    border: 10px solid #0b0b0b; 
+    border-radius: 18px;
+    overflow: hidden;      
+    box-sizing: border-box;
+    display: table;
+    border-collapse: separate;
+    margin: 24px;           
+  }
+
+  table {
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;    
+  }
+
+  td {
+    border: 10px solid #0b0b0b; 
+    padding: 0;
+    box-sizing: border-box;
+    width: 50%;  
+    height: calc(100% / 3); 
+  }
+
+
+  .white { background: #ffffff; }
+  .red   { background: #d92525; }
+  .yellow{ background: #f7d73b; }
+  .purple{ background: #7357ff; }
+
+  tr:first-child td:first-child { border-top-left-radius: 8px; }
+
+  tr:first-child td:last-child { border-top-right-radius: 8px; }
+
+  tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+
+  tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+</style>
+</head>
+<body>
+
+<div class="grid">
+  <table>
+    <tr>
+      <td class="white"></td>
+      <td class="red"></td>
+    </tr>
+    <tr>
+      <td class="yellow"></td>
+      <td class="white"></td>
+    </tr>
+    <tr>
+      <td class="white"></td>
+      <td class="purple"></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
+
+
+
+
+
